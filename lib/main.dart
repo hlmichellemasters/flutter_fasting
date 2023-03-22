@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './fast.dart';
 
@@ -79,9 +80,13 @@ class MyHomePage extends StatelessWidget {
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.grey)),
-                      Text('${fast.startDateTime.toString()} -' // +
-                          // fast.endDateTime.toString()
-                          ),
+                      Text('Start: ' +
+                          DateFormat('MM-dd hh:mm a')
+                              .format(fast.startDateTime)),
+                      Text('End:   ' +
+                          DateFormat('MM-dd hh:mm a').format(fast.endDateTime)),
+                      // style: TextStyle(
+                      //     fontSize: 14, fontWeight: FontWeight.bold)),
                     ],
                   ),
                 ],
