@@ -28,8 +28,6 @@ class MyHomePage extends StatelessWidget {
     ),
     Fast(id: '2', startDateTime: yesterday, endDateTime: yesterdayLater),
   ];
-  // static String idInput = '';
-  // static String hoursInput = '';
   final idController = TextEditingController();
   final hoursController = TextEditingController();
 
@@ -61,16 +59,10 @@ class MyHomePage extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(labelText: 'Fast Number'),
                       controller: idController,
-                      // onChanged: (value) {
-                      //   idInput = value;
-                      // },
                     ),
                     TextField(
                       decoration: InputDecoration(labelText: 'Hours'),
                       controller: hoursController,
-                      // onChanged: (value) {
-                      //   hoursInput = value;
-                      // },
                     ),
                     TextButton(
                       child: Text('Add Fast'),
