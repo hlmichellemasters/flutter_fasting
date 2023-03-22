@@ -81,10 +81,11 @@ class MyHomePage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: Colors.grey)),
                       Text('Start: ' +
-                          DateFormat('MM-dd hh:mm a')
+                          DateFormat('MMM dd hh:mm a')
                               .format(fast.startDateTime)),
                       Text('End:   ' +
-                          DateFormat('MM-dd hh:mm a').format(fast.endDateTime)),
+                          DateFormat('MMM dd hh:mm a')
+                              .format(fast.endDateTime)),
                       // style: TextStyle(
                       //     fontSize: 14, fontWeight: FontWeight.bold)),
                     ],
