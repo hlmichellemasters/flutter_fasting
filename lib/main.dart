@@ -20,7 +20,6 @@ class MyHomePage extends StatelessWidget {
   static var yesterday = now.subtract(const Duration(days: 1));
   static var yesterdayLater = yesterday.add(const Duration(hours: 12));
   static var later = now.add(const Duration(hours: 18));
-  // final formatter = new DateFormat('MM/dd/yyyy hh:mm');
   final List<Fast> fasts = [
     Fast(
       id: '1',
@@ -29,6 +28,10 @@ class MyHomePage extends StatelessWidget {
     ),
     Fast(id: '2', startDateTime: yesterday, endDateTime: yesterdayLater),
   ];
+  // static String idInput = '';
+  // static String hoursInput = '';
+  final idController = TextEditingController();
+  final hoursController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('My Faster'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
@@ -50,6 +53,31 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
+          Card(
+              elevation: 5,
+              child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Fast Number'),
+                      controller: idController,
+                      // onChanged: (value) {
+                      //   idInput = value;
+                      // },
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Hours'),
+                      controller: hoursController,
+                      // onChanged: (value) {
+                      //   hoursInput = value;
+                      // },
+                    ),
+                    TextButton(
+                      child: Text('Add Fast'),
+                      onPressed: () => print(
+                          'submitted: ${idController.text} and ${hoursController.text}'),
+                    )
+                  ]))),
           Column(
             children: fasts.map((fast) {
               return Card(
