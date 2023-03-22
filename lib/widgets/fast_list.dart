@@ -1,34 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../models/fast.dart';
 
-class FastList extends StatefulWidget {
-  @override
-  State<FastList> createState() => _FastListState();
-}
+class FastList extends StatelessWidget {
+  final List<Fast> fasts;
 
-class _FastListState extends State<FastList> {
-  static var now = new DateTime.now();
-  static var yesterday = now.subtract(const Duration(days: 1));
-  static var yesterdayLater = yesterday.add(const Duration(hours: 12));
-  static var later = now.add(const Duration(hours: 18));
-  final List<Fast> _userFasts = [
-    Fast(
-      id: '1',
-      startDateTime: now,
-      endDateTime: later,
-    ),
-    Fast(id: '2', startDateTime: yesterday, endDateTime: yesterdayLater),
-  ];
+  FastList(this.fasts);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: _userFasts.map((fast) {
+      children: this.fasts.map((fast) {
         return Card(
             child: Row(
           children: <Widget>[

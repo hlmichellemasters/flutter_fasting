@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/fast_list.dart';
+import 'widgets/user_fasts.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,18 +15,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final idController = TextEditingController();
-  final hoursController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Faster'),
-      ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
+        appBar: AppBar(
+          title: Text('Faster Faster'),
+        ),
+        body: Column(children: <Widget>[
           Container(
             margin: EdgeInsets.all(10),
             padding: EdgeInsets.all(20),
@@ -38,32 +33,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            elevation: 5,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Fast Number'),
-                    controller: idController,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Hours'),
-                    controller: hoursController,
-                  ),
-                  TextButton(
-                    child: Text('Add Fast'),
-                    onPressed: () => print(
-                        'submitted: ${idController.text} and ${hoursController.text}'),
-                  )
-                ],
-              ),
-            ),
-          ),
-          FastList()
-        ],
-      ),
-    );
+          UserFasts()
+        ]));
   }
 }

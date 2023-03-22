@@ -14,7 +14,4 @@ class Fast {
   double get hoursFasted =>
       (this.endDateTime.difference(this.startDateTime).inMinutes) /
       MINUTES_IN_AN_HOUR;
-
-  // String get startDateTimeString =>
-  // final formatter = new DateFormat('MM/dd/yyyy hh:mm');
 }
