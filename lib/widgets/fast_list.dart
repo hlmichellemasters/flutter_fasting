@@ -28,7 +28,8 @@ class FastList extends StatelessWidget {
                     width: 2,
                   )),
                   padding: EdgeInsets.all(10),
-                  child: Text(fasts[index].hoursFasted.toString() + ' Hrs',
+                  child: Text(
+                      fasts[index].hoursFasted.toStringAsFixed(1) + ' Hrs',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
