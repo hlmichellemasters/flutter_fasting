@@ -2,10 +2,24 @@ import 'package:flutter/material.dart';
 
 class NewFast extends StatelessWidget {
   final Function addFast;
-  final idController = TextEditingController();
+  final dateController = TextEditingController();
   final hoursController = TextEditingController();
 
   NewFast(this.addFast);
+
+  void submitData() {
+    final enteredDate = dateController.text;
+    final enteredHours = double.parse(hoursController.text);
+
+    // TODO: change to defaulting to now if empty date
+    if (enteredDate.isEmpty || enteredHours < 0) {
+      return;
+    }
+    // ignore: todo
+    // TODO: pass in the dates instead
+    addFast(enteredDate, enteredHours);
+    print('submitted: ${enteredDate} and ${enteredHours}');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,23 +30,20 @@ class NewFast extends StatelessWidget {
         child: Column(
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(labelText: 'Fast Number'),
-              controller: idController,
+              decoration: InputDecoration(labelText: 'Start'),
+              controller: dateController,
+              keyboardType: TextInputType.datetime,
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Hours'),
               controller: hoursController,
+              keyboardType: TextInputType.number,
+              onSubmitted: (_) => submitData,
             ),
             TextButton(
-                child: Text('Add Fast'),
-                onPressed: () => {
-                      // ignore: todo
-                      // TODO: pass in the dates instead
-                      addFast(idController.text,
-                          double.parse(hoursController.text)),
-                      print(
-                          'submitted: ${idController.text} and ${hoursController.text}'),
-                    })
+              child: Text('Add Fast'),
+              onPressed: submitData,
+            )
           ],
         ),
       ),
