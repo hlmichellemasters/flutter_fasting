@@ -21,6 +21,10 @@ class _UserFastsState extends State<UserFasts> {
       endDateTime: later,
     ),
     Fast(id: '2', startDateTime: yesterday, endDateTime: yesterdayLater),
+    Fast(id: '3', startDateTime: yesterday, endDateTime: yesterdayLater),
+    Fast(id: '4', startDateTime: yesterday, endDateTime: yesterdayLater),
+    Fast(id: '5', startDateTime: yesterday, endDateTime: yesterdayLater),
+    Fast(id: '6', startDateTime: yesterday, endDateTime: yesterdayLater),
   ];
 
   void _addNewFast(String id, double hours) {

@@ -26,6 +26,8 @@ class NewFast extends StatelessWidget {
             TextButton(
                 child: Text('Add Fast'),
                 onPressed: () => {
+                      // ignore: todo
+                      // TODO: pass in the dates instead
                       addFast(idController.text,
                           double.parse(hoursController.text)),
                       print(

@@ -1,4 +1,3 @@
-// import 'package:flutter/foundation.dart'  // for required?
 final MINUTES_IN_AN_HOUR = 60;
 
 class Fast {

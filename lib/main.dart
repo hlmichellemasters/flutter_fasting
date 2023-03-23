@@ -21,19 +21,22 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Faster Faster'),
         ),
-        body: Column(children: <Widget>[
-          Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(20),
-            alignment: Alignment.center,
-            width: double.infinity,
-            child: Card(
-              color: Colors.purple,
-              child: Text('CHART!', style: TextStyle(fontSize: 25)),
-              elevation: 5,
-            ),
-          ),
-          UserFasts()
-        ]));
+        body: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(20),
+                alignment: Alignment.center,
+                width: double.infinity,
+                child: Card(
+                  color: Colors.purple,
+                  child: Text('CHART!', style: TextStyle(fontSize: 25)),
+                  elevation: 5,
+                ),
+              ),
+              UserFasts()
+            ])));
   }
 }
