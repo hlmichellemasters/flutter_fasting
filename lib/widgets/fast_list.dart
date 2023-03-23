@@ -38,11 +38,11 @@ class FastList extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Fast #: ${fasts[index].id}',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey)),
+                    // Text('Fast #: ${fasts[index].id}',
+                    //     style: TextStyle(
+                    //         fontSize: 18,
+                    //         fontWeight: FontWeight.bold,
+                    //         color: Colors.grey)),
                     Text('Start: ' +
                         DateFormat('MMM dd hh:mm a')
                             .format(fasts[index].startDateTime)),

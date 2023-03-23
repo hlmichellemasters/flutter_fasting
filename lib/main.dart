@@ -18,9 +18,12 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Faster Faster'),
-        ),
+        appBar: AppBar(title: Text('Faster Faster'), actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {},
+          )
+        ]),
         body: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,

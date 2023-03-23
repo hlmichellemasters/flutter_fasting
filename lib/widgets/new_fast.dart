@@ -2,23 +2,22 @@ import 'package:flutter/material.dart';
 
 class NewFast extends StatelessWidget {
   final Function addFast;
-  final dateController = TextEditingController();
-  final hoursController = TextEditingController();
+  final startDateController = TextEditingController();
+  final endDateController = TextEditingController();
 
   NewFast(this.addFast);
 
   void submitData() {
-    final enteredDate = dateController.text;
-    final enteredHours = double.parse(hoursController.text);
+    final enteredStartDate = startDateController.text;
+    final enteredEndDate = endDateController.text;
 
     // TODO: change to defaulting to now if empty date
-    if (enteredDate.isEmpty || enteredHours < 0) {
+    if (enteredStartDate.isEmpty || enteredEndDate.isEmpty) {
       return;
     }
-    // ignore: todo
     // TODO: pass in the dates instead
-    addFast(enteredDate, enteredHours);
-    print('submitted: ${enteredDate} and ${enteredHours}');
+    addFast(enteredStartDate, enteredEndDate);
+    print('submitted: ${enteredStartDate} and ${enteredEndDate}');
   }
 
   @override
@@ -31,16 +30,17 @@ class NewFast extends StatelessWidget {
           children: <Widget>[
             TextField(
               decoration: InputDecoration(labelText: 'Start'),
-              controller: dateController,
+              controller: startDateController,
               keyboardType: TextInputType.datetime,
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Hours'),
-              controller: hoursController,
-              keyboardType: TextInputType.number,
+              decoration: InputDecoration(labelText: 'End (Optional)'),
+              controller: endDateController,
+              keyboardType: TextInputType.datetime,
               onSubmitted: (_) => submitData,
             ),
             TextButton(
+              // TODO: change to 'start' fast if no end datetime is selected
               child: Text('Add Fast'),
               onPressed: submitData,
             )
