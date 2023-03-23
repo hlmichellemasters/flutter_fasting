@@ -32,6 +32,7 @@ class _UserFastsState extends State<UserFasts> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[NewFast(), FastList(_userFasts)]);
+    return Column(
+        children: <Widget>[NewFast(_addNewFast), FastList(_userFasts)]);
   }
 }

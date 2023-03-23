@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class NewFast extends StatelessWidget {
+  final Function addFast;
   final idController = TextEditingController();
   final hoursController = TextEditingController();
+
+  NewFast(this.addFast);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +24,13 @@ class NewFast extends StatelessWidget {
               controller: hoursController,
             ),
             TextButton(
-              child: Text('Add Fast'),
-              onPressed: () => print(
-                  'submitted: ${idController.text} and ${hoursController.text}'),
-            )
+                child: Text('Add Fast'),
+                onPressed: () => {
+                      addFast(idController.text,
+                          double.parse(hoursController.text)),
+                      print(
+                          'submitted: ${idController.text} and ${hoursController.text}'),
+                    })
           ],
         ),
       ),
